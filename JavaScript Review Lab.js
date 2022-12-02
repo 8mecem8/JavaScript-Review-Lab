@@ -452,3 +452,292 @@ const calculateCube = (singleNum) => {
 console.log(calculateCube(5))
 
 console.log('\n\n==================================\n\n')
+
+
+
+
+
+
+//=================D. isVowel===================
+
+//Write a function isVowel that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. The vowel could be upper or lower case. Test your function on every vowel and make sure it's working. In general, when you write functions, take a minute to test them with different values to make sure they behave the way you want.
+
+//console.log(isVowel("a"));=> true
+
+const isVowel = (vowel) => {
+    if (vowel.toLowerCase() === "a" || vowel.toLowerCase() === "e" || vowel.toLowerCase() === "i" || vowel.toLowerCase() === "o" || vowel.toLowerCase() === "u") {
+        return "This is true";
+    }else {
+        return false;
+    }
+}
+
+console.log(isVowel('d'))
+
+console.log('\n\n===================================\n\n')
+
+//=================E. getTwoLengths=============
+
+//Write a function getTwoLengths that accepts two parameters (strings). The function should return an array of numbers where each number is the length of the corresponding string.
+
+//console.log(getTwoLengths("Hank", "Hippopopalous"));=> [4, 13]
+
+const getTwoLengths = (strA, strB) => {
+    const arrayLength = [strA.length, strB.length];
+    return arrayLength;
+}
+
+console.log(getTwoLengths("Hank", "Hippopotamus"))
+
+console.log('\n\n===================================\n\n')
+
+//=======F. getMultipleLengths===============
+
+//Write a function getMultipleLengthsthat accepts a single parameter as an argument: an array of strings. The function should return an array of numbers where each number is the length of the corresponding string.
+
+//console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));=> [5, 4, 2, 2, 4]
+
+const getMultipleLengths = (arr) => {
+	const multipleLengthArray = [];
+	for (i = 0; i < arr.length; i++){
+		multipleLengthArray.push(arr[i].length);
+	};
+	return multipleLengthArray;
+};
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
+console.log('\n\n===========================\n')
+
+//===============G. maxOfThree=================
+//Define a function maxOfThree that takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
+
+//console.log(maxOfThree(6, 9, 1)); => 9
+
+const maxOfThree = (num1, num2, num3) => {
+    const numOfThreeArray = [num1, num2, num3];
+    numOfThreeArray.sort(function(a, b) {
+        return a - b
+    });
+    return numOfThreeArray[2]
+}
+
+console.log(maxOfThree(6, 9, 1))
+
+console.log('\n\n==========================\n\n')
+/*Did you use Google and find Math.max()? If so, great job! Very resourceful—keep looking stuff up! However, for this particular question, we need you to submit a solution that does not use Math.max().*/
+
+
+
+
+//================H. printLongestWord==========
+//Write a function printLongestWord that accepts a single argument, an array of strings. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
+
+//console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));=> "Peanutbutter"
+const printLongestWord = (arr) => {
+    let longest = '';
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length > longest.length) {
+            longest = arr[i];
+        }
+    };
+    return longest
+}
+
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]))
+
+console.log('\n\n========================================\n\n')
+
+
+//===============Objects=================
+//Let's set up an object data structure. Let's say we have a website that sells products, and we have a user of our website, and we want to store that user's data. The object data structure is a good way to organize the data from our user.
+
+//=============A. Make a user object===========
+
+//Create an object called user.
+
+//Write in to the object the key-value pairs for name, email, age, and purchased. Set the value of purchasedto an empty array []. Set the other values to whatever you would like.
+const user = {
+    name: "Joe",
+    email: "Joe@gmail.com",
+    age: 37,
+    purchase: []
+}
+console.log(user)
+/*
+B. Update the user
+Our user has changed his or her email address. Without changing the original userobject, update the emailvalue to a new email address.
+Our user has had a birthday! Without changing the original userobject, increment the agevalue using the postfix operator. Hint: age++*/
+user.email= "thenewemail@gmail.com"
+user.age++
+    console.log(user.age);
+
+
+//=================C. Adding keys and values===============
+//You have decided to add your user's location to the data that you want to collect.
+//Without changing the original user object, add a new key location to the object, and give it a value or some-or-other location (a string).
+
+user.location = "some location"
+console.log(user.location)
+
+console.log('\n\n=============================================================================================\n\n')
+
+
+
+
+
+
+
+//============================================D. Shopaholic!============================================================
+//Our user has purchased an item! They have purchased some "carbohydrates". Using .push(), add the string "carbohydrates" to the purchasedarray.
+
+user.purchase.push('carbohydrates')
+console.log(user)
+
+//Our user has purchased an item! They have purchased some "peace of mind". Using .push(), add the string "peace of mind" to the purchasedarray.
+
+user.purchase.push('peace of mind')
+console.log(user)
+//Our user has purchased an item! They have purchased some "Merino jodhpurs". Using .push(), add the string "Merino jodhpurs" to the purchasedarray.
+
+user.purchase.push('Merino jodhpurs')
+console.log(user)
+
+//Console.log just the "Merino jodhpurs" from the purchasedarray.
+console.log(user.purchase[2])
+
+console.log('\n\n===============================================================================================\n\n')
+
+
+//===============================================E. Object-within-object================================================
+//Remember that you can add an object to an existing object in the same way that you can add any new property/value pair.
+
+//If we want to give our user a friend with a name and age, we could write:
+
+user.friend = {
+    name: "Mark weber",
+    age: 40,
+    location: "newark",
+    purchase: []
+}
+//When we console.log user, we would see the friend object added to our user object.
+console.log(user)
+//Write a friend object into your user object and give the friend a name, age, location, and purchased array (empty for now)
+//Console.log just the friend's name
+console.log(user.friend.name)
+//Console.log just the friend's location
+console.log(user.friend.location)
+//CHANGE the friend's age to 55
+user.friend.age = 55
+console.log(user.friend.age)
+//The friend has purchased "The One Ring". Use .push()to add "The One Ring" to the friend's purchased array.
+user.friend.purchase.push("The One Ring")
+console.log(user.friend.purchase)
+//The friend has purchased "A latte". Use .push()to add "A latte" to the friend's purchased array.
+user.friend.purchase.push("A latte")
+console.log(user.friend.purchase)
+
+//Console.log just "A latte" from the friend's purchased array.
+
+console.log('\n\n==============================================================================\n\n')
+
+
+
+//================================================F. Loops==========================================================
+//Write a for loop that iterates over the User's purchased array (NOT the friend's purchased array), and prints each element to the console.
+for (let i = 0; i < user.purchase.length; i++){
+    console.log(user.purchase[i])
+}
+console.log('\n\n=============================\n\n')
+//Write a for loop that iterates over the Friend's purchased array, and prints each element to the console.
+for (let a = 0; a < user.friend.purchase.length; a++) {
+    console.log(user.friend.purchase[a])
+}
+console.log('\n\n=======================\n\n')
+
+//==================G. Functions can operate on objects========================================
+//Write a single function update User that takes no parameters. When the function is run, it should increment the user's age by 1
+function updateUser () {
+    user.age++
+    user.name = user.name.toUpperCase()
+}
+updateUser()
+console.log(user.age)
+
+//make the user's name uppercase
+console.log(user.name)
+//The function does not need a return statement, it will merely modify the user object.
+
+//Write a function oldAndLoud that performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our user object, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoud function with user as the argument.
+
+    function oldAndLoud (person) {
+        person.age++
+        person.name = person.name.toUpperCase()
+    }
+    oldAndLoud(user)
+
+console.log(user)
+
+
+
+
+
+
+
+console.log('\n\n====================1. Mama cat=================\n\n')
+//Define an object called cat1 that contains the following properties:
+
+const cat1 = {
+    name: 'catty',
+    breed: 'street',
+    age: 4
+};
+console.log(cat1)
+console.log(cat1.age)
+console.log(cat1.breed)
+
+console.log('\n\n===================================\n\n')
+
+console.log('\n\n====================2. Papa cat===================\n\n')
+//Define an object called cat2that also contains the properties:
+const cat2 = {
+    name: 'cat',
+    breed: 'elegant',
+    age: 6
+}
+console.log(cat2)
+
+console.log('\n\n====================3. Combine Cats!====================\n\n')
+//The cats are multiplying!
+
+//Write a function combineCats that has two parameters mama, and papa. The function will take two arguments -- each a cat object.
+
+//Pass cat1 and cat2 as arguments to the combineCatsfunction. The function should console.log them.
+//Example:
+
+function combineCats(arg1, arg2) {
+    console.log(arg1)
+    console.log(arg2)
+
+    const interBreedOffspring = {
+        name: arg1.name + arg2.name,
+        age: 1,
+        breed: (arg1.breed) + "-" + (arg2.breed)
+    }
+    return interBreedOffspring
+}
+console.log(combineCats(cat1, cat2))
+
+
+// Cat Brain Bender
+//===========================================================
+//- Write a console.log that is three levels deep of combineCats. 
+//- combineCats should have two arguments, each which are combineCats, 
+//  each which have two arguments, each which are combineCats.
+//=======================================================  */
+console.log("=====================================================");
+console.log("4) Cat Brain Bender");
+console.log("=====================================================");
+
+console.log(combineCats(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)), combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))));
+
+console.log("=====================================================\n\n");
